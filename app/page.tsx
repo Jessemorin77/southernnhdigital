@@ -456,8 +456,8 @@ export default function Home() {
           </h2>
           <div className="w-[60px] h-[2px] bg-[#D4A017] mb-4" />
           <p className="text-[15px] text-[#777] leading-relaxed max-w-[520px] mb-12">
-            Explore a fully functional demo site we built for a fictional auto
-            repair shop. This is exactly what your customers would see &mdash;
+            Explore fully functional demo sites we built for fictional local
+            businesses. This is exactly what your customers would see &mdash;
             professional, mobile-friendly, and designed to drive calls.
           </p>
         </FadeIn>
@@ -497,6 +497,51 @@ export default function Home() {
                   <li>&#10003; Customer reviews &amp; ratings</li>
                   <li>&#10003; Current specials &amp; promotions</li>
                   <li>&#10003; Mobile-first responsive design</li>
+                </ul>
+                <span className="inline-flex items-center gap-2 text-sm font-semibold text-[#D4A017] group-hover:gap-3 transition-all">
+                  Explore the Demo
+                  <span className="text-lg">&rarr;</span>
+                </span>
+              </div>
+            </div>
+          </a>
+        </FadeIn>
+
+        <FadeIn delay={0.25}>
+          <a
+            href="/demo/barber"
+            className="group block service-card relative overflow-hidden mt-8"
+          >
+            <div className="flex flex-col md:flex-row gap-8 items-center">
+              <div className="w-full md:w-1/2">
+                <div className="bg-[#1a1a1a] rounded-sm aspect-[16/10] flex items-center justify-center overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=800&q=80"
+                    alt="Barbershop demo site preview"
+                    className="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500"
+                  />
+                </div>
+              </div>
+              <div className="w-full md:w-1/2">
+                <span className="inline-block text-[10px] font-semibold tracking-[2px] text-[#D4A017] uppercase bg-[#D4A01711] px-3 py-1 rounded-sm mb-4">
+                  Demo Site
+                </span>
+                <h3 className="text-2xl font-semibold text-[#F5F3EF] mb-3 group-hover:text-[#D4A017] transition-colors">
+                  Elm Street Barber Co.
+                </h3>
+                <p className="text-sm text-[#777] leading-relaxed mb-4">
+                  A premium single-page website for a Manchester, NH barbershop.
+                  Dark theme with gold accents, scroll animations, services
+                  with pricing, team profiles, gallery, reviews &mdash; the
+                  full package.
+                </p>
+                <ul className="text-xs text-[#666] space-y-1.5 mb-6">
+                  <li>&#10003; 8 services with pricing &amp; duration</li>
+                  <li>&#10003; Team profiles &amp; owner story</li>
+                  <li>&#10003; Photo gallery with hover effects</li>
+                  <li>&#10003; Customer reviews &amp; ratings</li>
+                  <li>&#10003; Dark premium design with animations</li>
                 </ul>
                 <span className="inline-flex items-center gap-2 text-sm font-semibold text-[#D4A017] group-hover:gap-3 transition-all">
                   Explore the Demo
