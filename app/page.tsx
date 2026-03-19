@@ -407,7 +407,7 @@ export default function Home() {
       {/* NAVIGATION */}
       {/* ============================================================ */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 px-6 transition-all duration-400 ${
+        className={`fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 transition-all duration-400 ${
           navBg
             ? "bg-[#0A0A0A]/95 backdrop-blur-md border-b border-[#1a1a1a]"
             : "bg-transparent border-b border-transparent"
@@ -495,8 +495,8 @@ export default function Home() {
           }}
         />
 
-        <div className="pt-28 pb-20 relative z-10 max-w-[1100px] mx-auto px-6 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="pt-24 pb-12 md:pt-28 md:pb-20 relative z-10 max-w-[1100px] mx-auto px-5 sm:px-6 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left: Text */}
             <div>
               <FadeIn>
@@ -508,7 +508,7 @@ export default function Home() {
                 </div>
               </FadeIn>
               <FadeIn delay={0.1}>
-                <h1 className="font-display text-[clamp(38px,5.5vw,68px)] font-bold leading-[1.08] text-[#F5F3EF] mb-6">
+                <h1 className="font-display text-[clamp(34px,5.5vw,68px)] font-bold leading-[1.08] text-[#F5F3EF] mb-5 md:mb-6">
                   Your customers
                   <br />are searching.
                   <br />
@@ -534,12 +534,12 @@ export default function Home() {
                 </div>
               </FadeIn>
               <FadeIn delay={0.4}>
-                <div className="mt-12 flex items-center gap-6">
-                  <div className="flex -space-x-2">
+                <div className="mt-10 md:mt-12 flex items-center gap-5">
+                  <div className="flex -space-x-2 shrink-0">
                     {["#D4A017", "#2563EB", "#059669", "#DC2626"].map((color, i) => (
                       <div
                         key={i}
-                        className="w-9 h-9 rounded-full border-2 border-[#0A0A0A] flex items-center justify-center text-[10px] font-bold text-white"
+                        className="w-8 h-8 md:w-9 md:h-9 rounded-full border-2 border-[#0A0A0A] flex items-center justify-center text-[9px] md:text-[10px] font-bold text-white"
                         style={{ backgroundColor: color }}
                       >
                         {["JM", "GS", "ES", "GP"][i]}
@@ -614,16 +614,32 @@ export default function Home() {
       {/* ============================================================ */}
       <section className="bg-[#111] border-y border-[#1a1a1a] relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#D4A01708] via-transparent to-[#D4A01708]" />
-        <div className="max-w-[1100px] mx-auto px-6 py-14 relative">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-6 py-10 md:py-14 relative">
+          {/* Desktop: centered columns */}
+          <div className="hidden md:grid grid-cols-3 gap-8 text-center">
             {STATS.map((s, i) => (
               <FadeIn key={i} delay={i * 0.1}>
                 <div className="relative">
-                  {i > 0 && <div className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 w-px h-12 bg-[#1a1a1a]" />}
+                  {i > 0 && <div className="absolute left-0 top-1/2 -translate-y-1/2 w-px h-12 bg-[#1a1a1a]" />}
                   <div className="font-display text-[48px] font-bold text-[#D4A017] mb-2 leading-none">
                     {s.value}
                   </div>
                   <div className="text-xs text-[#666] leading-relaxed max-w-[220px] mx-auto">
+                    {s.label}
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+          {/* Mobile: compact horizontal rows */}
+          <div className="md:hidden flex flex-col gap-0">
+            {STATS.map((s, i) => (
+              <FadeIn key={i} delay={i * 0.08}>
+                <div className={`flex items-center gap-5 py-4 ${i < STATS.length - 1 ? "border-b border-[#1a1a1a]" : ""}`}>
+                  <div className="font-display text-[32px] font-bold text-[#D4A017] leading-none min-w-[70px]">
+                    {s.value}
+                  </div>
+                  <div className="text-sm text-[#888] leading-snug">
                     {s.label}
                   </div>
                 </div>
@@ -636,7 +652,7 @@ export default function Home() {
       {/* ============================================================ */}
       {/* SERVICES */}
       {/* ============================================================ */}
-      <section id="services" className="max-w-[1100px] mx-auto px-6 py-28">
+      <section id="services" className="max-w-[1100px] mx-auto px-5 sm:px-6 py-16 md:py-28">
         <FadeIn>
           <SectionLabel>What We Do</SectionLabel>
           <SectionTitle>
@@ -644,7 +660,7 @@ export default function Home() {
           </SectionTitle>
           <GoldLine />
         </FadeIn>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8">
           {SERVICES.map((s, i) => (
             <FadeIn key={i} delay={i * 0.12}>
               <div className="group service-card relative">
@@ -675,7 +691,7 @@ export default function Home() {
       {/* WHO WE HELP */}
       {/* ============================================================ */}
       <section className="bg-[#0D0D0D] border-y border-[#1a1a1a]">
-        <div className="max-w-[1100px] mx-auto px-6 py-20">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-6 py-14 md:py-20">
           <FadeIn>
             <div className="text-center mb-12">
               <SectionLabel>Industries We Serve</SectionLabel>
@@ -684,12 +700,12 @@ export default function Home() {
               </p>
             </div>
           </FadeIn>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4">
             {INDUSTRIES.map((ind, i) => (
               <FadeIn key={ind.name} delay={i * 0.06}>
-                <div className="group flex items-center gap-3 bg-[#111] border border-[#1a1a1a] rounded-sm px-5 py-4 hover:border-[#D4A01744] transition-all duration-300 cursor-default">
-                  <span className="text-xl group-hover:scale-110 transition-transform duration-300">{ind.icon}</span>
-                  <span className="text-sm font-medium text-[#999] group-hover:text-[#E8E4DF] transition-colors duration-300">{ind.name}</span>
+                <div className="group flex items-center gap-2.5 md:gap-3 bg-[#111] border border-[#1a1a1a] rounded-sm px-4 py-3.5 md:px-5 md:py-4 hover:border-[#D4A01744] transition-all duration-300 cursor-default">
+                  <span className="text-lg md:text-xl group-hover:scale-110 transition-transform duration-300">{ind.icon}</span>
+                  <span className="text-xs md:text-sm font-medium text-[#999] group-hover:text-[#E8E4DF] transition-colors duration-300">{ind.name}</span>
                 </div>
               </FadeIn>
             ))}
@@ -700,25 +716,27 @@ export default function Home() {
       {/* ============================================================ */}
       {/* PROCESS */}
       {/* ============================================================ */}
-      <section id="process" className="max-w-[1100px] mx-auto px-6 py-28">
+      <section id="process" className="max-w-[1100px] mx-auto px-5 sm:px-6 py-16 md:py-28">
         <FadeIn>
           <SectionLabel>How It Works</SectionLabel>
           <SectionTitle>Simple process. Real results.</SectionTitle>
           <GoldLine />
         </FadeIn>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           {PROCESS.map((p, i) => (
             <FadeIn key={i} delay={i * 0.15}>
-              <div className="relative">
-                {/* Connector line */}
+              <div className="relative flex md:block items-start gap-5">
+                {/* Connector line (desktop only) */}
                 {i < PROCESS.length - 1 && (
                   <div className="hidden md:block absolute top-7 left-[60%] w-[80%] h-px border-t border-dashed border-[#222]" />
                 )}
-                <div className="w-14 h-14 bg-[#111] border border-[#D4A01744] rounded-full flex items-center justify-center mb-6">
-                  <span className="font-display text-xl font-bold text-[#D4A017]">{p.step}</span>
+                <div className="w-12 h-12 md:w-14 md:h-14 bg-[#111] border border-[#D4A01744] rounded-full flex items-center justify-center shrink-0 md:mb-6">
+                  <span className="font-display text-lg md:text-xl font-bold text-[#D4A017]">{p.step}</span>
                 </div>
-                <h3 className="text-xl font-semibold text-[#F5F3EF] mb-3">{p.title}</h3>
-                <p className="text-[15px] text-[#777] leading-relaxed">{p.desc}</p>
+                <div>
+                  <h3 className="text-lg md:text-xl font-semibold text-[#F5F3EF] mb-2 md:mb-3">{p.title}</h3>
+                  <p className="text-sm md:text-[15px] text-[#777] leading-relaxed">{p.desc}</p>
+                </div>
               </div>
             </FadeIn>
           ))}
@@ -729,7 +747,7 @@ export default function Home() {
       {/* SEE OUR WORK */}
       {/* ============================================================ */}
       <section id="work" className="bg-[#0D0D0D] border-y border-[#1a1a1a]">
-        <div className="max-w-[1100px] mx-auto px-6 py-28">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-6 py-16 md:py-28">
           <FadeIn>
             <SectionLabel>See Our Work</SectionLabel>
             <SectionTitle>This is what we build.</SectionTitle>
@@ -740,7 +758,7 @@ export default function Home() {
             <GoldLine />
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
             {DEMOS.map((demo, i) => (
               <FadeIn key={demo.href} delay={i * 0.12}>
                 <a
@@ -784,7 +802,7 @@ export default function Home() {
       {/* ============================================================ */}
       {/* PRICING */}
       {/* ============================================================ */}
-      <section id="pricing" className="max-w-[1100px] mx-auto px-6 py-28">
+      <section id="pricing" className="max-w-[1100px] mx-auto px-5 sm:px-6 py-16 md:py-28">
         <FadeIn>
           <div className="text-center mb-16">
             <SectionLabel>Transparent Pricing</SectionLabel>
@@ -796,22 +814,22 @@ export default function Home() {
             </p>
           </div>
         </FadeIn>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
           {PRICING.map((plan, i) => (
             <FadeIn key={plan.name} delay={i * 0.12}>
               <div
-                className={`relative flex flex-col h-full rounded-sm border p-8 transition-all duration-300 hover:-translate-y-1 ${
+                className={`relative flex flex-col h-full rounded-sm border transition-all duration-300 hover:-translate-y-1 ${
                   plan.featured
                     ? "bg-[#111] border-[#D4A017] shadow-[0_0_40px_-10px_rgba(212,160,23,0.15)]"
                     : "bg-[#0A0A0A] border-[#1a1a1a] hover:border-[#D4A01744]"
-                }`}
+                } p-6 md:p-8`}
               >
                 {plan.featured && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-[10px] font-bold tracking-[2px] text-[#0A0A0A] uppercase bg-[#D4A017] px-4 py-1 rounded-full">
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-[10px] font-bold tracking-[2px] text-[#0A0A0A] uppercase bg-[#D4A017] px-4 py-1 rounded-full whitespace-nowrap">
                     Most Popular
                   </span>
                 )}
-                <div className="mb-6">
+                <div className="mb-5 md:mb-6">
                   <h3 className="text-sm font-semibold text-[#999] uppercase tracking-wider mb-4">
                     {plan.name}
                   </h3>
@@ -862,8 +880,8 @@ export default function Home() {
       {/* ABOUT */}
       {/* ============================================================ */}
       <section id="about" className="bg-[#0D0D0D] border-y border-[#1a1a1a]">
-        <div className="max-w-[1100px] mx-auto px-6 py-28">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-6 py-16 md:py-28">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
             <FadeIn direction="right">
               <div>
                 <SectionLabel>About</SectionLabel>
@@ -933,7 +951,7 @@ export default function Home() {
       {/* ============================================================ */}
       {/* FAQ */}
       {/* ============================================================ */}
-      <section id="faq" className="max-w-[800px] mx-auto px-6 py-28">
+      <section id="faq" className="max-w-[800px] mx-auto px-5 sm:px-6 py-16 md:py-28">
         <FadeIn>
           <div className="text-center mb-14">
             <SectionLabel>FAQ</SectionLabel>
@@ -954,7 +972,7 @@ export default function Home() {
       {/* ============================================================ */}
       <section id="contact" className="bg-[#111] border-t border-[#1a1a1a] relative overflow-hidden">
         <AnimatedOrb className="w-[500px] h-[500px] -top-[30%] -right-[10%] bg-[#D4A017] opacity-[0.03]" />
-        <div className="max-w-[1100px] mx-auto px-6 py-28 text-center relative">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-6 py-16 md:py-28 text-center relative">
           <FadeIn>
             <SectionLabel>Get Started</SectionLabel>
             <SectionTitle>
@@ -975,8 +993,8 @@ export default function Home() {
       {/* FOOTER */}
       {/* ============================================================ */}
       <footer className="bg-[#060606] border-t border-[#1a1a1a]">
-        <div className="max-w-[1100px] mx-auto px-6 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-6 py-12 md:py-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-12">
             {/* Brand */}
             <div className="md:col-span-2">
               <div className="text-base font-bold text-[#E8E4DF] tracking-wide mb-3">
@@ -1050,15 +1068,15 @@ export default function Home() {
         </div>
 
         <div className="border-t border-[#111]">
-          <div className="max-w-[1100px] mx-auto px-6 py-6 flex justify-between items-center flex-wrap gap-4">
+          <div className="max-w-[1100px] mx-auto px-5 sm:px-6 py-5 md:py-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-center sm:text-left">
             <div className="text-xs text-[#444]">
               &copy; 2026 Southern NH Digital. Manchester, NH.
             </div>
-            <div className="text-xs text-[#444]">
+            <div className="text-xs text-[#444] flex flex-col sm:flex-row items-center gap-2 sm:gap-0">
               <a href={`tel:${PHONE}`} className="text-[#555] no-underline hover:text-[#D4A017] transition-colors">
                 {PHONE}
               </a>
-              <span className="mx-3 text-[#333]">|</span>
+              <span className="hidden sm:inline mx-3 text-[#333]">|</span>
               <a href={`mailto:${EMAIL}`} className="text-[#555] no-underline hover:text-[#D4A017] transition-colors">
                 {EMAIL}
               </a>
