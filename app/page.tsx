@@ -551,6 +551,51 @@ export default function Home() {
             </div>
           </a>
         </FadeIn>
+
+        <FadeIn delay={0.35}>
+          <a
+            href="/demo/plumbing"
+            className="group block service-card relative overflow-hidden mt-8"
+          >
+            <div className="flex flex-col md:flex-row gap-8 items-center">
+              <div className="w-full md:w-1/2">
+                <div className="bg-[#1a1a1a] rounded-sm aspect-[16/10] flex items-center justify-center overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80"
+                    alt="Plumbing & home services demo site preview"
+                    className="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500"
+                  />
+                </div>
+              </div>
+              <div className="w-full md:w-1/2">
+                <span className="inline-block text-[10px] font-semibold tracking-[2px] text-[#D4A017] uppercase bg-[#D4A01711] px-3 py-1 rounded-sm mb-4">
+                  Demo Site
+                </span>
+                <h3 className="text-2xl font-semibold text-[#F5F3EF] mb-3 group-hover:text-[#D4A017] transition-colors">
+                  Granite Plumbing &amp; Home Services
+                </h3>
+                <p className="text-sm text-[#777] leading-relaxed mb-4">
+                  A professional light-theme website for a Manchester, NH plumbing
+                  and home services company. Navy and orange design with service
+                  request form, 24/7 emergency badge, FAQ, specials, and full
+                  contact section.
+                </p>
+                <ul className="text-xs text-[#666] space-y-1.5 mb-6">
+                  <li>&#10003; 6 services with detailed feature lists</li>
+                  <li>&#10003; Service request form with dropdown</li>
+                  <li>&#10003; 24/7 emergency service emphasis</li>
+                  <li>&#10003; Special offers &amp; FAQ accordion</li>
+                  <li>&#10003; Clean light professional design</li>
+                </ul>
+                <span className="inline-flex items-center gap-2 text-sm font-semibold text-[#D4A017] group-hover:gap-3 transition-all">
+                  Explore the Demo
+                  <span className="text-lg">&rarr;</span>
+                </span>
+              </div>
+            </div>
+          </a>
+        </FadeIn>
       </section>
 
       {/* ============================================================ */}
