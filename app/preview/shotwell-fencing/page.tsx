@@ -19,24 +19,24 @@ const inter = Inter({
 });
 
 // ─── Palette / tokens ────────────────────────────────────────────────────────
-// Swap these image URLs for real Shotwell job photos any time.
+// All images live in public/preview/shotwell-fencing/ — swap for real job photos any time.
 const IMAGES = {
-  hero: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1800&q=85",
-  heroAlt: "Freshly installed cedar privacy fence bordering a green backyard",
-  vinyl: "https://images.unsplash.com/photo-1564149503948-e8b98b0e9a96?w=800&q=80",
-  vinylAlt: "White PVC vinyl fence surrounding a residential property",
-  wood: "https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=800&q=80",
-  woodAlt: "Natural wood shadowbox privacy fence in a backyard",
-  chainlink: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=800&q=80",
-  chainlinkAlt: "Chain link fence along a commercial property perimeter",
-  handrail: "https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=800&q=80",
-  handrailAlt: "Custom wrought iron handrail on outdoor stairs",
-  deck: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&q=80",
-  deckAlt: "Newly built wooden deck with pergola attached to a home",
-  pergola: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=800&q=80",
-  pergolaAlt: "Open pergola structure over a patio with string lights",
-  story: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80",
-  storyAlt: "Welder at work with sparks flying on a metal gate fabrication",
+  hero: "/preview/shotwell-fencing/hero.jpg",
+  heroAlt: "White vinyl privacy fence glowing at sunset in a residential backyard",
+  vinyl: "/preview/shotwell-fencing/hero.jpg",
+  vinylAlt: "White vinyl privacy fence glowing at sunset in a residential backyard",
+  wood: "/preview/shotwell-fencing/wood.jpg",
+  woodAlt: "Cedar wood privacy fence with cap-and-trim detail along a green lawn",
+  chainlink: "/preview/shotwell-fencing/chain.jpg",
+  chainlinkAlt: "Chain link fence with gate enclosing a rural residential property",
+  handrail: "/preview/shotwell-fencing/iron.jpg",
+  handrailAlt: "Custom wrought iron handrail with decorative scrollwork on brick front steps",
+  deck: "/preview/shotwell-fencing/deck.jpg",
+  deckAlt: "Pressure-treated wood deck with built-in railings and steps off the back of a house",
+  pergola: "/preview/shotwell-fencing/pergola.jpg",
+  pergolaAlt: "Lit timber pergola with fire pit, stone patio, and outdoor seating at dusk",
+  story: "/preview/shotwell-fencing/iron.jpg",
+  storyAlt: "Custom wrought iron handrail with decorative scrollwork on brick front steps",
 };
 
 const PHONE = "(984) 364-9749";
