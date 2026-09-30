@@ -131,9 +131,9 @@ const INDUSTRIES = [
 const PRICING = [
   {
     name: "Starter",
-    price: "$1,500",
+    price: "$499",
     period: "one-time",
-    monthly: "$99/mo",
+    monthly: "$49/mo",
     desc: "Perfect for businesses that need a clean, professional web presence fast.",
     features: [
       "Custom single-page website",
@@ -148,9 +148,9 @@ const PRICING = [
   },
   {
     name: "Professional",
-    price: "$3,000",
+    price: "$1,500",
     period: "one-time",
-    monthly: "$149/mo",
+    monthly: "$99/mo",
     desc: "Everything you need to dominate local search and convert visitors into customers.",
     features: [
       "Multi-page custom website",
@@ -167,9 +167,9 @@ const PRICING = [
   },
   {
     name: "Premium",
-    price: "$5,000+",
+    price: "$3,000+",
     period: "one-time",
-    monthly: "$199/mo",
+    monthly: "$149/mo",
     desc: "For businesses ready to invest in a complete online presence that dominates the competition.",
     features: [
       "Everything in Professional",
@@ -598,11 +598,6 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Floating stat badge */}
-                <div className="absolute -top-4 -right-4 bg-[#111] border border-[#D4A01733] rounded-lg px-4 py-3 shadow-lg">
-                  <div className="text-[#D4A017] text-lg font-bold font-display">+340%</div>
-                  <div className="text-[10px] text-[#666] uppercase tracking-wider">Avg. visibility increase</div>
-                </div>
               </div>
             </FadeIn>
           </div>
@@ -890,8 +885,7 @@ export default function Home() {
                 </h2>
                 <div className="w-[60px] h-[2px] bg-[#D4A017] mb-8" />
                 <p className="text-[15px] text-[#999] leading-relaxed mb-4">
-                  My name is Jesse. I&apos;m a GM-certified automotive technician with a
-                  Computer Science degree from SNHU, based right here in Southern New Hampshire.
+                  My name is Jesse. I&apos;m a Computer Science student at SNHU and a former GM-certified automotive technician, based right here in Southern New Hampshire.
                 </p>
                 <p className="text-[15px] text-[#999] leading-relaxed mb-4">
                   I started Southern NH Digital because I kept seeing the same problem &mdash;
@@ -924,11 +918,11 @@ export default function Home() {
                   <div className="space-y-4 text-sm text-[#888]">
                     <div className="flex items-center gap-3">
                       <span className="text-[#D4A017]">&#10003;</span>
-                      Computer Science, SNHU
+                      CS Student at SNHU
                     </div>
                     <div className="flex items-center gap-3">
                       <span className="text-[#D4A017]">&#10003;</span>
-                      GM Certified Automotive Technician
+                      Former GM Certified Automotive Technician
                     </div>
                     <div className="flex items-center gap-3">
                       <span className="text-[#D4A017]">&#10003;</span>
